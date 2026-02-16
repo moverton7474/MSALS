@@ -1,0 +1,61 @@
+id,epic,phase,module,title,type,priority,story_points,acceptance_criteria
+MSALS-001,Standalone Extraction,0,core,Scaffold new repo with Vite + React + TS + Tailwind,task,P0,2,npm run dev starts successfully
+MSALS-002,Standalone Extraction,0,core,Copy MDALS engine files unchanged,task,P0,1,All 4 edge function files present and identical to source
+MSALS-003,Standalone Extraction,0,core,Copy MDALS migration unchanged,task,P0,1,Migration SQL file present and identical to source
+MSALS-004,Standalone Extraction,0,core,Extract MDALS types into src/types/mdals.ts,task,P0,1,TypeScript compiles with zero errors
+MSALS-005,Standalone Extraction,0,core,Copy MdalsTestPanel with import path fix,task,P0,1,Component renders correctly with only 1 import changed
+MSALS-006,Standalone Extraction,0,auth,Create Supabase client wrapper,task,P0,1,Reads URL and key from environment variables
+MSALS-007,Standalone Extraction,0,auth,Create useAuth hook,task,P0,2,Tracks session state and provides signOut
+MSALS-008,Standalone Extraction,0,auth,Create LoginPage with email/password,task,P0,3,Sign up and sign in both work
+MSALS-009,Standalone Extraction,0,auth,Create ProtectedRoute and DashboardPage,task,P0,2,Unauthenticated users see login; authenticated see dashboard
+MSALS-010,Standalone Extraction,0,infra,Create new Supabase project,task,P0,1,Project accessible at dashboard URL
+MSALS-011,Standalone Extraction,0,infra,Apply MDALS database migration,task,P0,1,3 tables with RLS and indexes created
+MSALS-012,Standalone Extraction,0,infra,Deploy mdals-engine edge function,task,P0,1,Function responds to POST requests
+MSALS-013,Standalone Extraction,0,infra,Set GEMINI_API_KEY secret,task,P0,1,find-song returns AI-generated suggestions
+MSALS-014,Standalone Extraction,0,test,Verify find-song endpoint,task,P0,1,Returns song suggestions from description
+MSALS-015,Standalone Extraction,0,test,Verify analyze-song endpoint,task,P0,1,Returns summary themes emotions references
+MSALS-016,Standalone Extraction,0,test,Verify generate-plan endpoint,task,P0,1,Returns multi-day plan with day objects
+MSALS-017,Standalone Extraction,0,test,Verify start-plan endpoint,task,P0,1,Plan status changes to active
+MSALS-018,Standalone Extraction,0,test,Verify complete-day endpoint,task,P0,1,Current day advances
+MSALS-019,Standalone Extraction,0,test,Verify RLS enforcement,task,P0,1,Unauthenticated queries return zero rows
+MSALS-020,QR Lesson MVP,1,qr,Design QR code database schema,story,P1,2,qr_codes and qr_scans tables designed with RLS
+MSALS-021,QR Lesson MVP,1,qr,Create QR migration and apply,task,P1,2,Tables created with indexes and RLS policies
+MSALS-022,QR Lesson MVP,1,qr,Build qr-manager edge function,story,P1,5,create-qr resolve-qr log-scan list-teacher-qrs actions working
+MSALS-023,QR Lesson MVP,1,qr,Build QR creation page for teachers,story,P1,5,Teacher can create QR linking to a plan
+MSALS-024,QR Lesson MVP,1,qr,Build QR scan landing page for students,story,P1,5,Student scans QR and gets routed to plan content
+MSALS-025,QR Lesson MVP,1,qr,QR code image generation,task,P1,3,QR code renders as downloadable/printable image
+MSALS-026,QR Lesson MVP,1,qr,QR scan analytics dashboard,story,P1,3,Teacher sees scan counts and device types
+MSALS-027,Student Profiles,1,profiles,Design learning profiles schema,story,P1,2,learning_profiles and learning_progress tables designed
+MSALS-028,Student Profiles,1,profiles,Create profiles migration and apply,task,P1,2,Tables with RLS and indexes
+MSALS-029,Student Profiles,1,profiles,Build profiles-manager edge function,story,P1,5,CRUD + progress summary + baseline storage
+MSALS-030,Student Profiles,1,profiles,Build profile page UI,story,P1,3,Student can view and edit learning preferences
+MSALS-031,Student Profiles,1,profiles,Build baseline assessment component,story,P1,5,Interactive quiz that stores results to learning_profiles
+MSALS-032,Student Profiles,1,profiles,Build progress tracker component,story,P1,3,Shows cross-plan progress with reflections
+MSALS-033,Student Profiles,1,profiles,Connect profile data to plan generation,story,P1,3,Plan generation reads learning style from profile (adapter)
+MSALS-034,Voice Assistant,2,voice,Design voice session schema,story,P1,2,voice_sessions table with transcript storage
+MSALS-035,Voice Assistant,2,voice,Create voice migration and apply,task,P1,2,Table with RLS
+MSALS-036,Voice Assistant,2,voice,Build voice-assistant edge function,story,P2,8,Gemini-powered conversational AI about plan content
+MSALS-037,Voice Assistant,2,voice,Build voice coach widget (floating mic),story,P2,5,Always-visible mic button for voice interaction
+MSALS-038,Voice Assistant,2,voice,Build voice session full-screen view,story,P2,5,Transcript display with audio controls
+MSALS-039,Voice Assistant,2,voice,Speech-to-text integration,story,P2,5,Browser Speech API or external STT service
+MSALS-040,Voice Assistant,2,voice,Text-to-speech for AI responses,story,P2,5,Natural voice output for coaching
+MSALS-041,Music Generation,2,music,Design generated music schema,story,P1,2,generated_music table with status tracking
+MSALS-042,Music Generation,2,music,Create music migration and apply,task,P1,2,Table with RLS
+MSALS-043,Music Generation,2,music,Build music-generator adapter edge function,story,P2,8,Reads MDALS insights then calls music generation API
+MSALS-044,Music Generation,2,music,Build music player component,story,P2,3,Audio player widget for generated tracks
+MSALS-045,Music Generation,2,music,Genre selection UI (country/rap/R&B/gospel),story,P2,3,User picks genre before generation
+MSALS-046,Avatar Attribution,3,avatar,Design teacher/facility profile schema,story,P1,2,teacher_profiles facility_profiles plan_attributions tables
+MSALS-047,Avatar Attribution,3,avatar,Create avatar migration and apply,task,P1,2,Tables with RLS
+MSALS-048,Avatar Attribution,3,avatar,Build teacher profile page,story,P2,5,Teacher can create/edit profile with avatar
+MSALS-049,Avatar Attribution,3,avatar,Build teacher attribution card,story,P2,3,Shows teacher info on student-facing plan pages
+MSALS-050,Licensing Workflow,3,licensing,Design access request schema,story,P1,2,access_requests and plan_access tables
+MSALS-051,Licensing Workflow,3,licensing,Create licensing migration and apply,task,P1,2,Tables with RLS
+MSALS-052,Licensing Workflow,3,licensing,Build access-manager edge function,story,P2,5,request approve deny check list actions
+MSALS-053,Licensing Workflow,3,licensing,Build access request UI for students,story,P2,3,Request Learning Access button and form
+MSALS-054,Licensing Workflow,3,licensing,Build request management UI for teachers,story,P2,3,Approve/deny queue with notifications
+MSALS-055,SaaS Infrastructure,4,saas,Design multi-tenant schema,story,P2,3,tenants tenant_members usage_metrics tables
+MSALS-056,SaaS Infrastructure,4,saas,Create SaaS migration and apply,task,P2,2,Tables with RLS and RBAC policies
+MSALS-057,SaaS Infrastructure,4,saas,Build tenant-manager edge function,story,P2,8,create invite assign-role get-usage check-quota
+MSALS-058,SaaS Infrastructure,4,saas,Build admin dashboard,story,P2,8,Usage metrics tenant management UI
+MSALS-059,SaaS Infrastructure,4,saas,Implement RBAC middleware,story,P2,5,Role checks in edge functions and frontend
+MSALS-060,SaaS Infrastructure,4,saas,Usage metering and billing hooks,story,P2,5,Track API calls plans generated songs analyzed
